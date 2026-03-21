@@ -5,78 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>개인정보처리방침 – 공무원 업무수첩</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Noto Sans KR', -apple-system, sans-serif;
-      background: #F9FAFB; color: #111827; line-height: 1.8;
-    }
-    .top-bar {
-      background: #fff; border-bottom: 1px solid #E5E7EB;
-      padding: 16px 24px;
-    }
-    .top-bar a { text-decoration: none; color: #1C6EF2; font-size: 14px; font-weight: 500; }
-    .container {
-      max-width: 720px; margin: 0 auto; padding: 48px 24px 96px;
-    }
-    h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: #9CA3AF; margin-bottom: 40px; }
-    h2 { font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: #111827; }
-    p { font-size: 15px; color: #374151; margin-bottom: 12px; }
-    ul { padding-left: 20px; margin-bottom: 12px; }
-    li { font-size: 15px; color: #374151; margin-bottom: 6px; }
-    .highlight {
-      background: #EEF4FF; border-left: 3px solid #1C6EF2;
-      padding: 16px 20px; border-radius: 8px; margin: 20px 0;
-      font-size: 15px; color: #1558C8; font-weight: 500;
-    }
+    :root { --blue: #1C6EF2; --text: #0D0D0D; --sub: #6B7280; --border: #E5E7EB; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; color: var(--text); line-height: 1.7; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 62px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; }
+    .nav-logo-main { font-size: 16px; font-weight: 900; letter-spacing: -0.03em; }
+    .nav-logo-main .accent { color: var(--blue); }
+    .nav-cta { background: var(--blue); color: #fff; padding: 9px 22px; border-radius: 100px; font-size: 13px; font-weight: 700; text-decoration: none; transition: opacity .15s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    .wrap { max-width: 760px; margin: 0 auto; padding: 120px 40px 100px; }
+    .page-title { font-size: 32px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 8px; }
+    .page-date { font-size: 14px; color: var(--sub); margin-bottom: 48px; }
+    .section { margin-bottom: 36px; }
+    .section h2 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .section p, .section li { font-size: 15px; color: #374151; line-height: 1.8; }
+    .section ul { padding-left: 20px; margin-top: 8px; }
+    .section ul li { margin-bottom: 6px; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    footer { background: #F9FAFB; border-top: 1px solid var(--border); padding: 40px; text-align: center; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-logo { font-size: 15px; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 10px; }
+    .footer-logo .accent { color: var(--blue); }
+    .footer-copy { font-size: 13px; color: var(--sub); }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <a href="./index.html">← 공무원 업무수첩 홈으로</a>
-  </div>
-  <div class="container">
-    <h1>개인정보처리방침</h1>
-    <div class="updated">최종 업데이트: 2026년 3월 18일</div>
 
-    <div class="highlight">
-      공무원 업무수첩(AdminNote)은 사용자의 모든 데이터를 기기 내부에만 저장하며, 외부 서버로 전송하거나 수집하지 않습니다.
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">
+        <img src="./images/app-icon.png" alt="AdminNote 아이콘" />
+        <span class="nav-logo-main">Admin<span class="accent">Note</span></span>
+      </a>
+      <a href="./index.html" class="nav-cta">홈으로</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <h1 class="page-title">개인정보처리방침</h1>
+    <p class="page-date">시행일: 2026년 3월 22일</p>
+
+    <div class="section">
+      <p>김창현(이하 "개발자")은 공무원 업무수첩(AdminNote) 앱(이하 "앱")을 운영하면서 이용자의 개인정보를 중요하게 생각합니다. 본 개인정보처리방침은 앱이 개인정보를 어떻게 수집·이용·보관하는지 안내합니다.</p>
     </div>
 
-    <h2>제1조 (수집하는 개인정보)</h2>
-    <p>공무원 업무수첩은 다음과 같은 정보를 수집하지 않습니다.</p>
-    <ul>
-      <li>이름, 이메일, 전화번호 등 식별 정보</li>
-      <li>위치 정보</li>
-      <li>기기 고유 식별자</li>
-      <li>사용 통계 또는 분석 데이터</li>
-    </ul>
-    <p>앱 사용 중 입력하는 업무일정, 예산 정보, 인사이력 등 모든 데이터는 사용자의 기기(iPhone/iPad) 내부 저장소(UserDefaults)에만 저장됩니다.</p>
+    <hr class="divider" />
 
-    <h2>제2조 (개인정보의 처리 목적)</h2>
-    <p>본 앱은 외부 서버, 클라우드 서비스, 제3자에게 사용자 데이터를 전송하거나 공유하지 않습니다. 데이터는 오직 앱의 기능 제공을 위해 기기 내에서만 처리됩니다.</p>
+    <div class="section">
+      <h2>1. 수집하는 개인정보 항목</h2>
+      <p>본 앱은 서버를 운영하지 않으며, 이용자의 개인정보를 외부로 전송하거나 별도로 수집하지 않습니다. 앱에서 입력하는 모든 데이터(예산 정보, 업무 일정 등)는 이용자의 기기 내에만 저장됩니다.</p>
+    </div>
 
-    <h2>제3조 (개인정보의 보유 및 이용 기간)</h2>
-    <p>모든 데이터는 사용자가 앱을 삭제하거나 직접 초기화할 때까지 기기 내에 보관됩니다. 앱 삭제 시 저장된 모든 데이터가 함께 삭제됩니다.</p>
+    <div class="section">
+      <h2>2. 개인정보의 이용 목적</h2>
+      <p>수집된 개인정보는 없으며, 앱은 오직 이용자의 기기 내 데이터만을 활용하여 서비스를 제공합니다.</p>
+    </div>
 
-    <h2>제4조 (제3자 제공 및 공유)</h2>
-    <p>공무원 업무수첩은 어떠한 제3자 분석 도구, 광고 SDK, 외부 API도 사용하지 않습니다. 사용자 데이터는 외부에 제공되지 않습니다.</p>
+    <div class="section">
+      <h2>3. 접근 권한 안내</h2>
+      <p>앱은 아래의 기기 접근 권한을 요청합니다.</p>
+      <ul>
+        <li><strong>카메라</strong>: 예산서 문서를 촬영하여 텍스트를 자동 인식하기 위해 사용합니다.</li>
+        <li><strong>사진 보관함</strong>: 저장된 예산서 사진을 불러와 텍스트를 자동 인식하기 위해 사용합니다.</li>
+      </ul>
+      <p style="margin-top:10px;">위 권한을 통해 수집된 이미지는 기기 내에서만 처리되며, 외부 서버로 전송되지 않습니다.</p>
+    </div>
 
-    <h2>제5조 (아동의 개인정보 보호)</h2>
-    <p>본 앱은 만 14세 미만 아동으로부터 의도적으로 개인정보를 수집하지 않습니다.</p>
+    <div class="section">
+      <h2>4. 개인정보의 제3자 제공</h2>
+      <p>개발자는 이용자의 개인정보를 제3자에게 제공하지 않습니다.</p>
+    </div>
 
-    <h2>제6조 (사용자의 권리)</h2>
-    <p>사용자는 언제든지 앱 내 데이터를 직접 삭제하거나 앱을 제거함으로써 모든 데이터를 삭제할 수 있습니다.</p>
+    <div class="section">
+      <h2>5. 개인정보의 보유 및 이용 기간</h2>
+      <p>앱 내 데이터는 이용자가 앱을 삭제할 때까지 기기 내에 보관됩니다. 앱 삭제 시 모든 데이터는 함께 삭제됩니다.</p>
+    </div>
 
-    <h2>제7조 (개인정보처리방침의 변경)</h2>
-    <p>본 방침은 법령 또는 서비스 변경 사항에 따라 수정될 수 있으며, 변경 시 앱 내 공지 또는 이 페이지를 통해 고지합니다.</p>
+    <div class="section">
+      <h2>6. 아동의 개인정보 보호</h2>
+      <p>본 앱은 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+    </div>
 
-    <h2>제8조 (개인정보 보호 책임자 및 문의)</h2>
-    <p>개인정보 처리와 관련한 문의사항은 아래 이메일로 연락 주시기 바랍니다.</p>
-    <!-- 이메일 주소를 본인 이메일로 교체하세요 -->
-    <p><strong>이메일:</strong> <a href="mailto:your@email.com" style="color:#1C6EF2;">your@email.com</a></p>
+    <div class="section">
+      <h2>7. 개인정보처리방침의 변경</h2>
+      <p>본 방침은 관련 법령이나 앱 정책 변경에 따라 수정될 수 있으며, 변경 시 앱 또는 본 페이지를 통해 공지합니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. 문의</h2>
+      <p>개인정보처리방침에 관한 문의사항은 아래로 연락해 주세요.</p>
+      <ul>
+        <li>이메일: jjoraey@gmail.com</li>
+      </ul>
+    </div>
   </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Admin<span class="accent">Note</span></div>
+      <p class="footer-copy">© 2026 Changhyeon Kim. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
