@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공무원 업무수첩 – AdminNote</title>
-  <meta name="description" content="공무원을 위한 스마트 업무 관리 앱. 업무일정, 예산관리, 인사이력을 한 곳에서 관리하세요." />
+  <meta name="description" content="공무원을 위한 스마트 업무 관리 앱. 업무일정, 예산관리, 인사이력을 한 곳에서 관리하세요. iOS·Android 지원." />
   <meta property="og:title" content="공무원 업무수첩 – AdminNote" />
   <meta property="og:description" content="업무일정·예산관리·인사이력을 하나의 앱에서." />
   <meta property="og:image" content="./images/app-icon.png" />
@@ -113,6 +113,10 @@
       font-weight: 400;
     }
     .hero-desc strong { color: var(--text); font-weight: 700; }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+    }
     .hero-btn {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--text); color: #fff;
@@ -123,6 +127,9 @@
     }
     .hero-btn:hover { opacity: 0.82; transform: translateY(-2px); }
     .hero-btn svg { flex-shrink: 0; }
+    .hero-btn.android {
+      background: #01875F;
+    }
     .hero-note {
       margin-top: 20px;
       font-size: 13px; color: #B0B8C1;
@@ -268,7 +275,7 @@
            onerror="this.style.display='none'" />
       <span class="nav-logo-main">공무원 업무수첩 <span class="accent">AdminNote</span></span>
     </a>
-    <a href="https://apps.apple.com/kr/app/%EA%B3%B5%EB%AC%B4%EC%9B%90-%EC%97%85%EB%AC%B4%EC%88%98%EC%B2%A9/id6760883601" target="_blank" class="nav-cta">무료 다운로드</a>
+    <a href="#download" class="nav-cta">무료 다운로드</a>
   </div>
 </nav>
 
@@ -288,14 +295,26 @@
     <strong>승진순위 · 부서조직도 · 외부연락처 · 업무사진 · 문서스캔</strong><br />
     공무원에게 꼭 맞는 모든 기능을 하나의 앱으로 관리하세요.
   </p>
-  <a href="https://apps.apple.com/kr/app/%EA%B3%B5%EB%AC%B4%EC%9B%90-%EC%97%85%EB%AC%B4%EC%88%98%EC%B2%A9/id6760883601" target="_blank" class="hero-btn" id="download">
-    <svg width="20" height="24" viewBox="0 0 20 24" fill="none">
-      <path d="M16.5 12.4C16.48 9.86 18.6 8.61 18.7 8.55C17.48 6.74 15.55 6.51 14.88 6.49C13.28 6.31 11.73 7.41 10.9 7.41C10.06 7.41 8.78 6.51 7.43 6.54C5.66 6.57 4.01 7.59 3.1 9.19C1.22 12.41 2.63 17.1 4.44 19.69C5.35 20.96 6.41 22.38 7.8 22.33C9.15 22.28 9.65 21.49 11.28 21.49C12.9 21.49 13.37 22.33 14.77 22.3C16.21 22.28 17.13 21.01 18.01 19.73C19.07 18.27 19.5 16.84 19.52 16.77C19.49 16.76 16.52 15.66 16.5 12.4Z" fill="white"/>
-      <path d="M13.66 4.44C14.39 3.55 14.89 2.33 14.75 1.09C13.73 1.13 12.48 1.78 11.73 2.65C11.06 3.43 10.47 4.71 10.62 5.9C11.76 5.99 12.91 5.3 13.66 4.44Z" fill="white"/>
-    </svg>
-    App Store에서 무료로 시작하기
-  </a>
-  <p class="hero-note">무료 · iPhone · iPad 지원 · 회원가입 불필요</p>
+  <div class="hero-btns" id="download">
+    <a href="https://apps.apple.com/kr/app/%EA%B3%B5%EB%AC%B4%EC%9B%90-%EC%97%85%EB%AC%B4%EC%88%98%EC%B2%A9/id6760883601" target="_blank" class="hero-btn">
+      <svg width="20" height="24" viewBox="0 0 20 24" fill="none">
+        <path d="M16.5 12.4C16.48 9.86 18.6 8.61 18.7 8.55C17.48 6.74 15.55 6.51 14.88 6.49C13.28 6.31 11.73 7.41 10.9 7.41C10.06 7.41 8.78 6.51 7.43 6.54C5.66 6.57 4.01 7.59 3.1 9.19C1.22 12.41 2.63 17.1 4.44 19.69C5.35 20.96 6.41 22.38 7.8 22.33C9.15 22.28 9.65 21.49 11.28 21.49C12.9 21.49 13.37 22.33 14.77 22.3C16.21 22.28 17.13 21.01 18.01 19.73C19.07 18.27 19.5 16.84 19.52 16.77C19.49 16.76 16.52 15.66 16.5 12.4Z" fill="white"/>
+        <path d="M13.66 4.44C14.39 3.55 14.89 2.33 14.75 1.09C13.73 1.13 12.48 1.78 11.73 2.65C11.06 3.43 10.47 4.71 10.62 5.9C11.76 5.99 12.91 5.3 13.66 4.44Z" fill="white"/>
+      </svg>
+      App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.jjoraey.adminnote" target="_blank" class="hero-btn android">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M3.18 23.76c.3.17.64.2.97.1l11.65-11.65L12.34 8.75 3.18 23.76z" fill="white" opacity=".6"/>
+        <path d="M1.5 2.67A1.5 1.5 0 0 0 1 3.87v16.26a1.5 1.5 0 0 0 .5 1.2l.07.06 9.11-9.11v-.21L1.57 2.6l-.07.07z" fill="white"/>
+        <path d="M15.8 15.73l-3.04-3.04v-.22l3.04-3.04.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.12l-3.6 2.05-.07.04z" fill="white" opacity=".8"/>
+        <path d="M15.87 15.69L12.76 12.6 3.18 23.76c.34.36.89.4 1.3.1l11.39-8.17" fill="white" opacity=".4"/>
+        <path d="M15.87 9.51L4.48 1.34A1.02 1.02 0 0 0 3.18.25L12.76 12.6l3.11-3.09z" fill="white" opacity=".4"/>
+      </svg>
+      Google Play
+    </a>
+  </div>
+  <p class="hero-note">무료 · iPhone · iPad · Android 지원 · 회원가입 불필요</p>
 </section>
 
 <div class="divider"></div>
@@ -539,14 +558,26 @@
 <section class="cta-section">
   <h2>공무원 업무수첩,<br /><span class="accent">지금 무료로 시작하세요</span></h2>
   <p>App Store에서 다운로드하고<br />공직생활을 더 체계적으로 관리해 보세요.</p>
-  <a href="https://apps.apple.com/kr/app/%EA%B3%B5%EB%AC%B4%EC%9B%90-%EC%97%85%EB%AC%B4%EC%88%98%EC%B2%A9/id6760883601" target="_blank" class="hero-btn">
-    <svg width="20" height="24" viewBox="0 0 20 24" fill="none">
-      <path d="M16.5 12.4C16.48 9.86 18.6 8.61 18.7 8.55C17.48 6.74 15.55 6.51 14.88 6.49C13.28 6.31 11.73 7.41 10.9 7.41C10.06 7.41 8.78 6.51 7.43 6.54C5.66 6.57 4.01 7.59 3.1 9.19C1.22 12.41 2.63 17.1 4.44 19.69C5.35 20.96 6.41 22.38 7.8 22.33C9.15 22.28 9.65 21.49 11.28 21.49C12.9 21.49 13.37 22.33 14.77 22.3C16.21 22.28 17.13 21.01 18.01 19.73C19.07 18.27 19.5 16.84 19.52 16.77C19.49 16.76 16.52 15.66 16.5 12.4Z" fill="white"/>
-      <path d="M13.66 4.44C14.39 3.55 14.89 2.33 14.75 1.09C13.73 1.13 12.48 1.78 11.73 2.65C11.06 3.43 10.47 4.71 10.62 5.9C11.76 5.99 12.91 5.3 13.66 4.44Z" fill="white"/>
-    </svg>
-    App Store에서 무료로 시작하기
-  </a>
-  <p class="hero-note" style="margin-top:20px;">무료 · iPhone · iPad 지원 · 회원가입 불필요</p>
+  <div class="hero-btns">
+    <a href="https://apps.apple.com/kr/app/%EA%B3%B5%EB%AC%B4%EC%9B%90-%EC%97%85%EB%AC%B4%EC%88%98%EC%B2%A9/id6760883601" target="_blank" class="hero-btn">
+      <svg width="20" height="24" viewBox="0 0 20 24" fill="none">
+        <path d="M16.5 12.4C16.48 9.86 18.6 8.61 18.7 8.55C17.48 6.74 15.55 6.51 14.88 6.49C13.28 6.31 11.73 7.41 10.9 7.41C10.06 7.41 8.78 6.51 7.43 6.54C5.66 6.57 4.01 7.59 3.1 9.19C1.22 12.41 2.63 17.1 4.44 19.69C5.35 20.96 6.41 22.38 7.8 22.33C9.15 22.28 9.65 21.49 11.28 21.49C12.9 21.49 13.37 22.33 14.77 22.3C16.21 22.28 17.13 21.01 18.01 19.73C19.07 18.27 19.5 16.84 19.52 16.77C19.49 16.76 16.52 15.66 16.5 12.4Z" fill="white"/>
+        <path d="M13.66 4.44C14.39 3.55 14.89 2.33 14.75 1.09C13.73 1.13 12.48 1.78 11.73 2.65C11.06 3.43 10.47 4.71 10.62 5.9C11.76 5.99 12.91 5.3 13.66 4.44Z" fill="white"/>
+      </svg>
+      App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.jjoraey.adminnote" target="_blank" class="hero-btn android">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M3.18 23.76c.3.17.64.2.97.1l11.65-11.65L12.34 8.75 3.18 23.76z" fill="white" opacity=".6"/>
+        <path d="M1.5 2.67A1.5 1.5 0 0 0 1 3.87v16.26a1.5 1.5 0 0 0 .5 1.2l.07.06 9.11-9.11v-.21L1.57 2.6l-.07.07z" fill="white"/>
+        <path d="M15.8 15.73l-3.04-3.04v-.22l3.04-3.04.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.12l-3.6 2.05-.07.04z" fill="white" opacity=".8"/>
+        <path d="M15.87 15.69L12.76 12.6 3.18 23.76c.34.36.89.4 1.3.1l11.39-8.17" fill="white" opacity=".4"/>
+        <path d="M15.87 9.51L4.48 1.34A1.02 1.02 0 0 0 3.18.25L12.76 12.6l3.11-3.09z" fill="white" opacity=".4"/>
+      </svg>
+      Google Play
+    </a>
+  </div>
+  <p class="hero-note" style="margin-top:20px;">무료 · iPhone · iPad · Android 지원 · 회원가입 불필요</p>
 </section>
 
 <!-- ─── FOOTER ─── -->
